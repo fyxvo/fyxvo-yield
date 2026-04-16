@@ -10,7 +10,7 @@ export function RiskBadge({ protocol }: RiskBadgeProps) {
 
   const palette =
     profile.tier === "Low"
-      ? "border-emerald-500/30 bg-emerald-500/12 text-emerald-200"
+      ? "border-green-500/30 bg-green-500/12 text-green-200"
       : profile.tier === "Medium"
         ? "border-amber-500/30 bg-amber-500/12 text-amber-200"
         : "border-red-500/30 bg-red-500/12 text-red-200";

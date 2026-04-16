@@ -91,7 +91,7 @@ export function HomeDashboard() {
           <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-zinc-500">
             Best Live APY
           </div>
-          <div className="text-3xl font-semibold text-emerald-300">
+          <div className="text-3xl font-semibold text-orange-300">
             {metrics.best ? formatPercent(metrics.best.apy) : "--"}
           </div>
           <p className="mt-2 text-sm text-zinc-400">

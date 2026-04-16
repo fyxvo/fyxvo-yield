@@ -10,7 +10,7 @@ export function OpportunitiesTable({
   opportunities,
 }: OpportunitiesTableProps) {
   return (
-    <div className="terminal-scrollbar overflow-x-auto">
+    <div className="scrollbar-thin overflow-x-auto">
       <table className="min-w-full border-separate border-spacing-0 text-left text-sm">
         <thead>
           <tr className="text-[11px] uppercase tracking-[0.28em] text-zinc-500">
@@ -45,7 +45,7 @@ export function OpportunitiesTable({
               <td className="border-b border-white/5 px-4 py-4 text-zinc-300">
                 {opportunity.asset}
               </td>
-              <td className="border-b border-white/5 px-4 py-4 font-medium text-emerald-300">
+              <td className="border-b border-white/5 px-4 py-4 font-medium text-orange-300">
                 {formatPercent(opportunity.apy)}
               </td>
               <td className="border-b border-white/5 px-4 py-4 text-zinc-300">
@@ -59,7 +59,7 @@ export function OpportunitiesTable({
                   href={opportunity.sourceUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex rounded-full border border-emerald-500/30 bg-emerald-500/8 px-3 py-1.5 text-[11px] uppercase tracking-[0.24em] text-emerald-200 hover:border-emerald-400/50 hover:bg-emerald-500/14"
+                  className="inline-flex rounded-full border border-orange-500/30 bg-orange-500/8 px-3 py-1.5 text-[11px] uppercase tracking-[0.24em] text-orange-200 transition-colors hover:border-orange-400/50 hover:bg-orange-500/14"
                 >
                   View
                 </a>

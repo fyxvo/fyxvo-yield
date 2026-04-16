@@ -16,7 +16,7 @@ export function StatePanel({
       ? "border-red-500/30 bg-red-500/8 text-red-100"
       : tone === "empty"
         ? "border-amber-500/20 bg-amber-500/8 text-amber-100"
-        : "border-emerald-500/20 bg-emerald-500/8 text-emerald-100";
+        : "border-orange-500/20 bg-orange-500/8 text-orange-100";
 
   return (
     <Panel className={`px-6 py-8 ${toneClass}`}>

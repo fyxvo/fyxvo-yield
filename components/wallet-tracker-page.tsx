@@ -66,12 +66,12 @@ export function WalletTrackerPage() {
               value={walletAddress}
               onChange={(event) => setWalletAddress(event.target.value.trim())}
               placeholder="Enter a base58 wallet address"
-              className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-zinc-100 outline-none focus:border-emerald-400/40"
+              className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-zinc-100 outline-none focus:border-orange-400/40"
             />
           </label>
           <button
             type="submit"
-            className="self-end rounded-xl border border-emerald-500/30 bg-emerald-500/12 px-5 py-3 text-xs uppercase tracking-[0.24em] text-emerald-200 hover:border-emerald-400/50 hover:bg-emerald-500/18 disabled:cursor-not-allowed disabled:opacity-60"
+            className="self-end rounded-xl border border-orange-500/30 bg-orange-500/12 px-5 py-3 text-xs uppercase tracking-[0.24em] text-orange-200 transition-colors hover:border-orange-400/50 hover:bg-orange-500/18 disabled:cursor-not-allowed disabled:opacity-60"
             disabled={loading}
           >
             {loading ? "Scanning..." : "Track Wallet"}
@@ -104,7 +104,7 @@ export function WalletTrackerPage() {
               <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-zinc-500">
                 SOL Balance
               </div>
-              <div className="text-3xl font-semibold text-emerald-300">
+              <div className="text-3xl font-semibold text-orange-300">
                 {snapshot.solBalance.toFixed(4)} SOL
               </div>
             </Panel>
@@ -214,7 +214,7 @@ export function WalletTrackerPage() {
                             {formatMoney(position.estimatedUnderlyingUsd)}
                           </div>
                         </td>
-                        <td className="border-b border-white/5 px-4 py-4 text-emerald-300">
+                        <td className="border-b border-white/5 px-4 py-4 text-orange-300">
                           {formatPercent(position.apy)}
                         </td>
                         <td className="border-b border-white/5 px-4 py-4 text-zinc-300">

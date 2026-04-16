@@ -15,7 +15,7 @@ export function RiskMethodology() {
 
       <div className="grid gap-4 md:grid-cols-3">
         <Panel className="px-5 py-5">
-          <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-emerald-400/70">
+          <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-orange-400/70">
             Audit Status
           </div>
           <p className="text-sm leading-6 text-zinc-400">
@@ -25,7 +25,7 @@ export function RiskMethodology() {
           </p>
         </Panel>
         <Panel className="px-5 py-5">
-          <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-emerald-400/70">
+          <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-orange-400/70">
             TVL Range
           </div>
           <p className="text-sm leading-6 text-zinc-400">
@@ -35,7 +35,7 @@ export function RiskMethodology() {
           </p>
         </Panel>
         <Panel className="px-5 py-5">
-          <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-emerald-400/70">
+          <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-orange-400/70">
             Protocol Age
           </div>
           <p className="text-sm leading-6 text-zinc-400">

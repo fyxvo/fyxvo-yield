@@ -115,7 +115,7 @@ export function RebalanceAlertsPanel({
 
       <Panel className="grid gap-4 px-5 py-5 lg:grid-cols-[1.3fr_1fr]">
         <div>
-          <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-emerald-400/70">
+          <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-orange-400/70">
             Alert Logic
           </div>
           <p className="max-w-2xl text-sm leading-6 text-zinc-400">
@@ -135,7 +135,7 @@ export function RebalanceAlertsPanel({
               type="number"
               min="0"
               step="0.1"
-              className="w-full rounded-xl border border-white/10 bg-black/40 px-3 py-3 text-sm text-zinc-100 outline-none focus:border-emerald-400/40"
+              className="w-full rounded-xl border border-white/10 bg-black/40 px-3 py-3 text-sm text-zinc-100 outline-none focus:border-orange-400/40"
             />
           </label>
           <label className="space-y-2">
@@ -148,7 +148,7 @@ export function RebalanceAlertsPanel({
               type="number"
               min="0"
               step="0.1"
-              className="w-full rounded-xl border border-white/10 bg-black/40 px-3 py-3 text-sm text-zinc-100 outline-none focus:border-emerald-400/40"
+              className="w-full rounded-xl border border-white/10 bg-black/40 px-3 py-3 text-sm text-zinc-100 outline-none focus:border-orange-400/40"
             />
           </label>
         </div>
@@ -162,11 +162,11 @@ export function RebalanceAlertsPanel({
       ) : error ? (
         <StatePanel title="Alert Engine Error" message={error} tone="error" />
       ) : betterOpportunities.length > 0 ? (
-        <Panel className="border-emerald-400/30 bg-emerald-500/10 px-5 py-5">
-          <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-emerald-300">
+        <Panel className="border-orange-400/30 bg-orange-500/10 px-5 py-5">
+          <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-orange-300">
             Opportunity Detected
           </div>
-          <p className="text-sm leading-6 text-emerald-100">
+          <p className="text-sm leading-6 text-orange-100">
             {betterOpportunities[0]?.protocol} {betterOpportunities[0]?.asset}
             {" "}is yielding {formatPercent(betterOpportunities[0]?.apy ?? 0)},
             which beats your baseline of {formatPercent(parsedCurrentApy)} by at
