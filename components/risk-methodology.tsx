@@ -49,7 +49,7 @@ export function RiskMethodology() {
         {profiles.map((profile) => {
           const badgeClass =
             profile.tier === "Low"
-              ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-200"
+              ? "border-green-500/30 bg-green-500/10 text-green-200"
               : profile.tier === "Medium"
                 ? "border-amber-500/30 bg-amber-500/10 text-amber-200"
                 : "border-red-500/30 bg-red-500/10 text-red-200";
