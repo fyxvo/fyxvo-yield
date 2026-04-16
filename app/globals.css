@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #06110d;
+  --foreground: #edf7f1;
+  --panel: rgba(7, 15, 12, 0.86);
+  --panel-strong: rgba(2, 8, 6, 0.96);
+  --border: rgba(52, 211, 153, 0.18);
+  --border-strong: rgba(52, 211, 153, 0.36);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-ibm-plex-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-ibm-plex-mono), monospace;
+}
+
+.terminal-grid {
+  background:
+    radial-gradient(circle at top left, rgba(16, 185, 129, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.1), transparent 22%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.55)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(21, 34, 28, 0.45),
+      rgba(21, 34, 28, 0.45) 1px,
+      transparent 1px,
+      transparent 38px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(21, 34, 28, 0.28),
+      rgba(21, 34, 28, 0.28) 1px,
+      transparent 1px,
+      transparent 38px
+    ),
+    linear-gradient(180deg, #06110d 0%, #030705 100%);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+}
+
+.panel-strong {
+  background: var(--panel-strong);
+  border: 1px solid var(--border-strong);
+  box-shadow:
+    0 0 0 1px rgba(16, 185, 129, 0.02),
+    0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+.terminal-scrollbar::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(52, 211, 153, 0.2);
+  border-radius: 999px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-track {
+  background: rgba(4, 12, 8, 0.8);
+}
