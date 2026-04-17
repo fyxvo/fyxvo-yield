@@ -1,3 +1,4 @@
+import { AssetLogo, ProtocolLogo } from "@/components/protocol-logo";
 import { RiskBadge } from "@/components/risk-badge";
 import { formatMoney, formatPercent } from "@/lib/format";
 import type { YieldOpportunity } from "@/lib/types";
@@ -35,20 +36,29 @@ export function OpportunitiesTable({
         </thead>
         <tbody>
           {opportunities.map((opportunity) => (
-            <tr key={opportunity.id} className="group hover:bg-white/[0.025]">
-              <td className="border-b border-white/5 px-4 py-4 text-zinc-100">
-                {opportunity.protocol}
+            <tr
+              key={opportunity.id}
+              className="group card-tilt-row transition-colors hover:bg-white/[0.025]"
+            >
+              <td className="border-b border-white/5 px-4 py-4">
+                <div className="flex items-center gap-2.5">
+                  <ProtocolLogo protocol={opportunity.protocol} size={20} />
+                  <span className="text-zinc-100">{opportunity.protocol}</span>
+                </div>
               </td>
               <td className="border-b border-white/5 px-4 py-4 text-zinc-400">
                 {opportunity.strategyType}
               </td>
-              <td className="border-b border-white/5 px-4 py-4 text-zinc-300">
-                {opportunity.asset}
+              <td className="border-b border-white/5 px-4 py-4">
+                <div className="flex items-center gap-2">
+                  <AssetLogo asset={opportunity.asset} size={18} />
+                  <span className="text-zinc-300">{opportunity.asset}</span>
+                </div>
               </td>
-              <td className="border-b border-white/5 px-4 py-4 font-medium text-orange-300">
+              <td className="border-b border-white/5 px-4 py-4 font-medium text-orange-300 tabular-nums">
                 {formatPercent(opportunity.apy)}
               </td>
-              <td className="border-b border-white/5 px-4 py-4 text-zinc-300">
+              <td className="border-b border-white/5 px-4 py-4 text-zinc-300 tabular-nums">
                 {formatMoney(opportunity.tvl)}
               </td>
               <td className="border-b border-white/5 px-4 py-4">

@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/page-header";
 import { Panel } from "@/components/panel";
+import { ProtocolLogo } from "@/components/protocol-logo";
 import { getAllRiskProfiles } from "@/lib/risk";
 
 export function RiskMethodology() {
@@ -14,7 +15,7 @@ export function RiskMethodology() {
       />
 
       <div className="grid gap-4 md:grid-cols-3">
-        <Panel className="px-5 py-5">
+        <Panel className="card-hover animate-fade-up animation-delay-75 px-5 py-5">
           <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-orange-400/70">
             Audit Status
           </div>
@@ -24,7 +25,7 @@ export function RiskMethodology() {
             the score up.
           </p>
         </Panel>
-        <Panel className="px-5 py-5">
+        <Panel className="card-hover animate-fade-up animation-delay-150 px-5 py-5">
           <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-orange-400/70">
             TVL Range
           </div>
@@ -34,7 +35,7 @@ export function RiskMethodology() {
             contract or liquidity risks.
           </p>
         </Panel>
-        <Panel className="px-5 py-5">
+        <Panel className="card-hover animate-fade-up animation-delay-225 px-5 py-5">
           <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-orange-400/70">
             Protocol Age
           </div>
@@ -55,11 +56,14 @@ export function RiskMethodology() {
                 : "border-red-500/30 bg-red-500/10 text-red-200";
 
           return (
-            <Panel key={profile.protocol} className="px-5 py-5">
+            <Panel key={profile.protocol} className="card-hover px-5 py-5">
               <div className="mb-3 flex items-start justify-between gap-4">
                 <div>
-                  <div className="text-[11px] uppercase tracking-[0.35em] text-zinc-500">
-                    {profile.protocol}
+                  <div className="flex items-center gap-2">
+                    <ProtocolLogo protocol={profile.protocol} size={20} />
+                    <div className="text-[11px] uppercase tracking-[0.35em] text-zinc-500">
+                      {profile.protocol}
+                    </div>
                   </div>
                   <h3 className="mt-2 font-sans text-2xl font-semibold text-zinc-100">
                     {profile.tier} Risk

@@ -79,7 +79,7 @@ export function HomeDashboard() {
   }, [opportunities]);
 
   return (
-    <div className="space-y-6">
+    <div className="animate-fade-up space-y-6">
       <PageHeader
         eyebrow="Discovery"
         title="Yield Discovery"
@@ -87,7 +87,7 @@ export function HomeDashboard() {
       />
 
       <div className="grid gap-4 lg:grid-cols-3">
-        <Panel className="px-5 py-5">
+        <Panel className="card-hover animate-fade-up animation-delay-75 px-5 py-5">
           <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-zinc-500">
             Best Live APY
           </div>
@@ -100,7 +100,7 @@ export function HomeDashboard() {
               : "Waiting for fresh protocol data."}
           </p>
         </Panel>
-        <Panel className="px-5 py-5">
+        <Panel className="card-hover animate-fade-up animation-delay-150 px-5 py-5">
           <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-zinc-500">
             Tracked TVL
           </div>
@@ -111,7 +111,7 @@ export function HomeDashboard() {
             Aggregated from the currently surfaced strategies.
           </p>
         </Panel>
-        <Panel className="px-5 py-5">
+        <Panel className="card-hover animate-fade-up animation-delay-225 px-5 py-5">
           <div className="mb-2 text-[11px] uppercase tracking-[0.35em] text-zinc-500">
             Protocol Coverage
           </div>
