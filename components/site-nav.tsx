@@ -25,8 +25,8 @@ export function SiteNav() {
             className={[
               "rounded-full border px-4 py-2 text-xs uppercase tracking-[0.28em] transition-colors",
               active
-                ? "border-orange-500/40 bg-orange-500/12 text-orange-300 shadow-[0_0_24px_rgba(249,115,22,0.14)]"
-                : "border-white/8 bg-black/30 text-zinc-400 hover:border-orange-500/20 hover:text-zinc-200",
+                ? "border-orange-500/40 bg-orange-500/12 text-orange-400 shadow-[0_0_24px_rgba(249,115,22,0.14)]"
+                : "border-[var(--border)] bg-[var(--panel-soft)] text-[var(--foreground-subtle)] hover:border-orange-500/20 hover:text-[var(--foreground-muted)]",
             ].join(" ")}
           >
             {item.label}
@@ -36,7 +36,7 @@ export function SiteNav() {
       <div className="ml-auto hidden sm:block">
         <a
           href="https://www.fyxvo.com"
-          className="rounded-full border border-white/8 bg-black/30 px-4 py-2 text-xs uppercase tracking-[0.28em] text-zinc-500 transition-colors hover:border-orange-500/20 hover:text-zinc-300"
+          className="rounded-full border border-[var(--border)] bg-[var(--panel-soft)] px-4 py-2 text-xs uppercase tracking-[0.28em] text-[var(--foreground-subtle)] transition-colors hover:border-orange-500/20 hover:text-[var(--foreground-muted)]"
         >
           ← Fyxvo.com
         </a>

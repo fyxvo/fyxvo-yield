@@ -3,6 +3,7 @@ import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteNav } from "@/components/site-nav";
+import { ThemeToggle } from "@/components/theme-toggle";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -59,10 +60,18 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} h-full antialiased`}
     >
+      {/* Anti-FOUC: apply saved theme class before first paint */}
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('fyxvo-theme');if(t==='light')document.documentElement.classList.add('light')}catch(e){}})()`,
+          }}
+        />
+      </head>
       <body className="min-h-full">
         <div className="site-grid min-h-screen">
           <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 py-4 sm:px-6 lg:px-8">
-            <header className="mb-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/60 px-5 py-5 shadow-[0_0_60px_rgba(0,0,0,0.4),0_0_0_1px_rgba(249,115,22,0.06)] backdrop-blur md:flex-row md:items-center md:justify-between">
+            <header className="mb-6 flex flex-col gap-4 rounded-2xl border border-[var(--border-strong)] bg-[var(--panel)] px-5 py-5 shadow-[0_0_60px_rgba(0,0,0,0.2),0_0_0_1px_rgba(249,115,22,0.06)] backdrop-blur md:flex-row md:items-center md:justify-between">
               <div className="flex items-center gap-4">
                 <a
                   href="https://www.fyxvo.com"
@@ -80,24 +89,25 @@ export default function RootLayout({
                 </a>
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="font-sans text-xl font-semibold tracking-tight text-zinc-100">
+                    <span className="font-sans text-xl font-semibold tracking-tight text-[var(--foreground)]">
                       Fyxvo
                     </span>
                     <span className="rounded border border-orange-500/30 bg-orange-500/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.28em] text-orange-300">
                       Yield
                     </span>
                   </div>
-                  <p className="mt-0.5 text-xs text-zinc-500">
+                  <p className="mt-0.5 text-xs text-[var(--foreground-subtle)]">
                     Solana yield aggregator — Kamino · MarginFi · Orca
                   </p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="rounded-xl border border-white/8 bg-white/[0.03] px-4 py-2.5 text-xs text-zinc-400">
+                <div className="hidden rounded-xl border border-[var(--border)] bg-[var(--panel-soft)] px-4 py-2.5 text-xs text-[var(--foreground-muted)] sm:block">
                   <span className="text-[10px] uppercase tracking-[0.3em] text-orange-400/80">
                     RPC
                   </span>
-                  <span className="ml-2">Powered by{" "}
+                  <span className="ml-2">
+                    Powered by{" "}
                     <a
                       href="https://www.fyxvo.com"
                       className="text-zinc-300 transition-colors hover:text-orange-300"
@@ -106,6 +116,7 @@ export default function RootLayout({
                     </a>
                   </span>
                 </div>
+                <ThemeToggle />
               </div>
             </header>
             <SiteNav />
