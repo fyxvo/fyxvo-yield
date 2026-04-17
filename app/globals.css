@@ -260,3 +260,31 @@ body {
 .light .card-hover:hover {
   box-shadow: 0 24px 60px rgba(249, 115, 22, 0.08), 0 8px 24px rgba(0, 0, 0, 0.12);
 }
+
+/* Risk badge text: pastel colors invisible on white → deep saturated */
+.light .text-green-200  { color: #14532d; }
+.light .text-amber-200  { color: #78350f; }
+.light .text-red-200    { color: #7f1d1d; }
+
+/* Risk badge backgrounds: make visible on white */
+.light .bg-green-500\/10  { background-color: rgba(34, 197, 94, 0.12); }
+.light .bg-green-500\/12  { background-color: rgba(34, 197, 94, 0.14); }
+.light .bg-amber-500\/10  { background-color: rgba(245, 158, 11, 0.12); }
+.light .bg-amber-500\/12  { background-color: rgba(245, 158, 11, 0.14); }
+.light .bg-red-500\/10    { background-color: rgba(239, 68, 68, 0.1);  }
+.light .bg-red-500\/12    { background-color: rgba(239, 68, 68, 0.12); }
+
+/* Risk badge borders: more visible on white */
+.light .border-green-500\/30 { border-color: rgba(34, 197, 94, 0.5);  }
+.light .border-amber-500\/30 { border-color: rgba(245, 158, 11, 0.5); }
+.light .border-red-500\/30   { border-color: rgba(239, 68, 68, 0.5);  }
+
+/* panel-strong: soften dark shadow on white background */
+.light .panel-strong {
+  box-shadow:
+    0 0 0 1px rgba(249, 115, 22, 0.06),
+    0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Divider lines inside panels */
+.light .border-white\/6 { border-color: rgba(0, 0, 0, 0.08); }
