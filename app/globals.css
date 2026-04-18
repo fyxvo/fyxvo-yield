@@ -288,3 +288,182 @@ body {
 
 /* Divider lines inside panels */
 .light .border-white\/6 { border-color: rgba(0, 0, 0, 0.08); }
+
+/* ── Glassmorphism ────────────────────────────────────────── */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 0 1px rgba(249, 115, 22, 0.04),
+    0 8px 32px rgba(0, 0, 0, 0.25);
+}
+.glass-card:hover {
+  border-color: rgba(249, 115, 22, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(249, 115, 22, 0.1),
+    0 16px 48px rgba(0, 0, 0, 0.3),
+    0 0 24px rgba(249, 115, 22, 0.06);
+}
+.light .glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Hero section ─────────────────────────────────────────── */
+
+.hero-section {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(249, 115, 22, 0.08) 0%, transparent 65%),
+    var(--background);
+}
+
+/* Shimmer text animation */
+@keyframes shimmer-text {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Logo entrance animation */
+@keyframes logo-scale-in {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Pulse glow for high-risk badges */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+  50%       { box-shadow: 0 0 8px 2px rgba(239, 68, 68, 0.25); }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+/* CTA button glow */
+.glow-btn {
+  box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+  transition: box-shadow 0.25s ease, background-color 0.2s ease;
+}
+.glow-btn:hover {
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.45), 0 4px 16px rgba(249, 115, 22, 0.25);
+}
+
+.glow-btn-secondary {
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.25s ease;
+}
+.glow-btn-secondary:hover {
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.2);
+}
+
+/* Opportunity row glassmorphism */
+.opp-row {
+  transition: background-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.opp-row:hover {
+  background-color: rgba(255, 255, 255, 0.025);
+}
+
+/* ── Footer grid ──────────────────────────────────────────── */
+
+.footer-grid {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(249, 115, 22, 0.03),
+      rgba(249, 115, 22, 0.03) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(249, 115, 22, 0.03),
+      rgba(249, 115, 22, 0.03) 1px,
+      transparent 1px,
+      transparent 60px
+    );
+}
+
+.footer-social-btn {
+  transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.footer-social-btn:hover {
+  color: #f97316;
+  border-color: rgba(249, 115, 22, 0.4);
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.3);
+  transform: scale(1.1);
+}
+
+/* ── Scroll-triggered reveal (via Intersection Observer) ───── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Route progress bar ────────────────────────────────────── */
+@keyframes progress-slide {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.route-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #f97316, #fbbf24);
+  transform-origin: left;
+  animation: progress-slide 0.4s ease-out;
+  z-index: 9999;
+}
+
+/* Animated underline for stat labels */
+@keyframes draw-line {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+.stat-underline {
+  position: relative;
+  display: inline-block;
+}
+.stat-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #f97316, transparent);
+  width: 0;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.stat-underline.visible::after {
+  width: 100%;
+}
+
+/* ── prefers-reduced-motion ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-shimmer,
+  .animate-pulse-glow,
+  .glow-btn,
+  .card-hover,
+  .glass-card,
+  .reveal,
+  .footer-social-btn {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
